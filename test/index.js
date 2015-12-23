@@ -1,8 +1,21 @@
 import assert from 'assert';
-import residentAdvisorScrapeApi from '../lib';
+import ResidentAdvisorScrapeApi from '../lib';
 
-describe('resident-advisor-scrape-api', function () {
-  it('should have unit test!', function () {
-    assert(false, 'we expected this package author to add actual unit tests.');
+
+var api = new ResidentAdvisorScrapeApi();
+
+describe('resident-advisor-scrape-api', () => {
+
+  describe('getTracks', () => {
+    it('should get an djs tracks', () => {
+      api.getTracks().then((stuff) => {
+        console.log(stuff)
+      })
+      // assert(api.square(2), 4);
+    });
+  });
+
+  it('should return hi im here', () => {
+    assert(api.mare(), 'hii i am mare');
   });
 });
