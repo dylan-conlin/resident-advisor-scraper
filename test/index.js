@@ -1,21 +1,23 @@
 import assert from 'assert';
-import ResidentAdvisorScrapeApi from '../lib';
+import ResidentAdvisor from '../lib';
 
 
-var api = new ResidentAdvisorScrapeApi();
+var api = new ResidentAdvisor();
 
 describe('resident-advisor-scrape-api', () => {
 
-  describe('getTracks', () => {
-    it('should get an djs tracks', () => {
-      api.getTracks().then((stuff) => {
-        console.log(stuff)
-      })
-      // assert(api.square(2), 4);
-    });
+  describe('getTrackList', () => {
+    it('should find a tracklist', () => {
+      api.getYoutubes('A Guy Called Gerald');
+    })
+    
+    // it('should get an djs tracks', () => {
+    //   api.getTracks().then((stuff) => {
+    //     console.log(stuff)
+    //   })
+    //   // assert(api.square(2), 4);
+    // });
   });
 
-  it('should return hi im here', () => {
-    assert(api.mare(), 'hii i am mare');
-  });
+
 });
